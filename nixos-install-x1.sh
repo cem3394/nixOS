@@ -22,10 +22,9 @@ swapon /dev/vg/swap
 
 # Create config file
 nixos-generate-config --root /mnt
-export $REMOTE_DESKTOP_CONF ='https://github.com/cem3394/nixOS/blob/master/configuration.nix'
 
 # Enable wifi first
-curl $REMOTE_DESKTOP_CONF > /mnt/etc/nixos/desktop-configuration.nix
+curl https://raw.githubusercontent.com/cem3394/nixOS/master/configuration.nix > /mnt/etc/nixos/desktop-configuration.nix
 
 # include desktop-configuration and checks the other configuration options
 # vim /mnt/etc/nixos/configuration.nix
