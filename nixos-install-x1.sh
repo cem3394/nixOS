@@ -19,6 +19,6 @@ export $REMOTE_DESKTOP_CONF ='https://github.com/cem3394/nixOS/blob/master/confi
 curl $REMOTE_DESKTOP_CONF > /mnt/etc/nixos/desktop-configuration.nix
 
 # include desktop-configuration and checks the other configuration options
-vim /mnt/etc/nixos/configuration.nix
-nixos-install
-reboot
+# vim /mnt/etc/nixos/configuration.nix
+# nixos-install
+# reboot
