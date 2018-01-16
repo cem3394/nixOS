@@ -198,4 +198,3 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "17.09";
-}
