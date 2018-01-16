@@ -55,6 +55,7 @@
        enableGnomeExtensions = true;
        enableGoogleTalkPlugin = true;
       };
+    };
   };
 
   # List packages installed in system profile.
