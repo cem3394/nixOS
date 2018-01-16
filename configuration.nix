@@ -133,7 +133,6 @@
         vim_configurable
         gitAndTools.gitFull
         python
-        kde4.kdiff3
         vimPlugins.YouCompleteMe
         vimPlugins.gitgutter
 
