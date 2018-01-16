@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-
   # Supposedly better for the SSD.
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
@@ -31,7 +30,6 @@
     }
   ];
   
-
   networking = {
     hostName = "ovonel";
     networkmanager.enable = true;
@@ -57,24 +55,6 @@
        enableGnomeExtensions = true;
        enableGoogleTalkPlugin = true;
       };
-      # Create an alias for the unstable channel
-      packageOverrides = pkgs: {
-        unstable = import <nixos-unstable> {
-          # pass the nixpkgs config to the unstable alias
-          # to ensure `allowUnfree = true;` is propagated:
-          config = config.nixpkgs.config;
-        };
-      };
-    };
-    overlays = [(self: super: {
-      firefox = super.unstable.firefox;
-      neovim = super.neovim.override {
-        withPython = true;
-        vimAlias = true;
-      };
-      ninja-kitware = super.callPackage ./rdrpkgs/ninja-kitware {};
-      nix-home = super.callPackage ./rdrpkgs/nix-home {};
-    })];
   };
 
   # List packages installed in system profile.
@@ -161,7 +141,6 @@
         gnugrep 
       ];
       nix-packages = [
-        nix-home
         nix-prefetch-git
         nix-repl
         nixos-container
@@ -208,13 +187,6 @@
     variables.EDITOR = "nvim";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs = {
-    fish.enable = true;
-    thefuck.enable = true;
-    tmux.enable = true;
-  };
 
   virtualisation.docker = {
     enable = true;
