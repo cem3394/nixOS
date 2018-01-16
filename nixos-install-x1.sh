@@ -13,7 +13,7 @@ mount /dev/nvme0n1p1 /mnt/boot
 swapon /dev/vg/swap
 nixos-generate-config --root /mnt
 
-export $REMOTE_DESKTOP_CONF ='https://gist.githubusercontent.com/cem3394'
+export $REMOTE_DESKTOP_CONF ='https://github.com/cem3394/nixOS/blob/master/configuration.nix'
 
 # enable wifi first
 curl $REMOTE_DESKTOP_CONF > /mnt/etc/nixos/desktop-configuration.nix
